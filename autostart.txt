@@ -1,0 +1,5 @@
+@echo off
+cd /d "C:\Users\Nitin Rajput\Auto IC"
+start npm start
+timeout /t 2
+explorer "http://localhost:3000/"
