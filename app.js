@@ -23,9 +23,9 @@ app.get('/directory.html', (req, res) => {
 
 app.post('/launch', async (req, res) => {
     
-    const websiteURL = 'https://vendinvtracking.rites.com:81/(S(rmlveb55xstdnj55ungzxv45))/index.aspx'
+    const websiteURL = 'https://vptp.rites.com:81/(S(tbq3tgmhyrh5xs2dbtj31yz0))/index.aspx'
     const {
-        trackingID, diary, diarydate, dummy, amount
+        trackingID, diary, diarydate, dummy, amount,url,
     } = req.body;
     
     const txt_dummy = "dummy-" + dummy
@@ -49,9 +49,9 @@ app.post('/launch', async (req, res) => {
         await page.type('#txtPwd', '12191@123');
         await page.keyboard.press('Enter');        
         //-----------Login Done---------------        
-        await page.waitForNavigation({ waitUntil: 'networkidle2' });
+        await page.waitForTimeout(3000)
 
-        await page.goto ('https://vendinvtracking.rites.com:81/(S(rmlveb55xstdnj55ungzxv45))/Anjani/InvoiceStatus.aspx')
+        await page.goto (url)
 
         await page.screenshot({ path: 'screenshot.png' })
  
